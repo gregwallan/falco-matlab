@@ -24,7 +24,7 @@ function out = falco_plot_singular_mode_spectrum_of_Efield(mp, out, jacStruct, E
     Eri = [real(Eall); imag(Eall)];
     alpha2 = max(diag(real(Gall' * Gall)));
     Gri = [real(Gall); imag(Gall)];
-    [U, S, ~] = svd(Gri, 'econ');
+    [U, S, V] = svd(Gri, 'econ');
     s = diag(S);
 
     EriPrime = U' * Eri;
